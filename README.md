@@ -1,2 +1,2 @@
-# hello-world
-First github repository. Testing and hello world.
+# JS CALCULATOR
+Calculator for discipline CIN7603
