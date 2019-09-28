@@ -13,12 +13,13 @@
     text-align: center;
 }
 
-input {
+.input {
     text-align: right;
     align-content: center;
+    
 }
 
-result {
+.result {
     text-align: right;
     align-content: center;
 }
