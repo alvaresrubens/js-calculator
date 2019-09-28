@@ -1,0 +1,24 @@
+
+.grid-numerico {
+    padding: 0.5em;
+    display: grid;
+    grid-gap: 0.9rem;
+    grid-template-columns: 0.9rem 0.9rem 0.9rem 0.9rem;
+    align-content: center;
+}
+
+.grid-geral {
+    margin-left: 50%;
+    margin-right: 50%;
+    text-align: center;
+}
+
+input {
+    text-align: right;
+    align-content: center;
+}
+
+result {
+    text-align: right;
+    align-content: center;
+}
