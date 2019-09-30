@@ -1,4 +1,3 @@
-
 .grid-numerico {
     padding: 0.5em;
     display: grid;
@@ -16,7 +15,6 @@
 .input {
     text-align: right;
     align-content: center;
-    
 }
 
 .result {

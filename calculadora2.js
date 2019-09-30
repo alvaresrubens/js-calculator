@@ -1,61 +1,65 @@
 var operando1;
 var operando2;
 var operador;
-var resultado;
 var visor;
+var resultado;
 
 function teclaNumerica(numero) {
 
-        operando1 = operando1.concat(numero); 
-        document.getElementById("visor").value = numero;
-          
-
-}
-
-function teclaFuncao(funcao) {
-    switch (funcao) {
-        case "somar":
-            operador = "somar";
-            simbolo = "+";
-            document.getElementById("visor").value = visor.concat(simbolo);
-            break;
-        case "subtrair":
-            operador = "subtrair";
-            break;
-        case "multiplicar":
-            operador = "multiplicar";
-            break;
-        case "dividir":
-            operador = "dividir";
-            break;
-        case "apagar":
-            document.getElementById("visor").value = '';
-            break;
-        case "=":
-            calcular(operador);
-            break;
+    if (typeof visor == 'undefined') {
+        document.getElementById("visor").value = '';
     }
+    document.getElementById("visor").value = document.getElementById("visor").value + numero;
+    visor = 1;
+
 }
-function calcular(operador) {
+
+function teclaFuncao(operacao) {
+
+    operando1 = document.getElementById("visor").value;
+    document.getElementById("visor").value = '';
+    delete visor;
+
+    if (operacao == 'apagar') {
+        document.getElementById("visor").value = '';
+        delete visor;
+        delete operando1;
+        delete operando2;
+        delete resultado;
+
+    }
+
+    if (typeof operador != 'undefined' && operacao == 'resultado') {
+
+        resultado = calcular(operacao, operando1, operando2);
+        document.getElementById("visor").value = resultado;
+        delete operacao;
+        delete resultado;
+        return (0);
+    }
+
+    if (typeof resultado != 'undefined') {
+        resultado = calcularOper(operacao, operando1, operando2);
+        operando = operacao;
+        document.getElementById("visor").value = resultado;
+    } else {
+        operando2 = document.getElementById("visor").value;
+        operador = operacao;
+    }
+
+}
+
+function calcular(operador, operando1, operando2) {
 
     switch (operador) {
         case "somar":
-            resultado = valor1 + valor2;
-            alert("Somar" + resultado);
-            break;
-
+            return operando1 + operando2;
         case "subtrair":
-            resultado = valor1 - valor2;
-            break;
-
+            return operando1 - operando2;
         case "multiplicar":
-            resultado = valor1 * valor2;
-            break;
-
+            return operando1 * operando2;
         case "dividir":
-            resultado = valor1 / valor2;
-            break;
-
+            return operando1 / operando2;
     }
 
 }
