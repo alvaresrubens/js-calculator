@@ -1,8 +1,9 @@
-var operando1;
-var operando2;
+var valor1;
+var valor2;
 var operador;
 var visor;
 var resultado;
+
 
 function teclaNumerica(numero) {
 
@@ -16,22 +17,22 @@ function teclaNumerica(numero) {
 
 function teclaFuncao(operacao) {
 
-    operando1 = document.getElementById("visor").value;
+    valor1 = document.getElementById("visor").value;
+    //alert(valor1);
     document.getElementById("visor").value = '';
     delete visor;
 
     if (operacao == 'apagar') {
         document.getElementById("visor").value = '';
         delete visor;
-        delete operando1;
-        delete operando2;
+        delete valor1;
+        delete valor2;
         delete resultado;
 
     }
-
     if (typeof operador != 'undefined' && operacao == 'resultado') {
 
-        resultado = calcular(operacao, operando1, operando2);
+        resultado = calcular(operador, valor1, valor2);
         document.getElementById("visor").value = resultado;
         delete operacao;
         delete resultado;
@@ -39,27 +40,30 @@ function teclaFuncao(operacao) {
     }
 
     if (typeof resultado != 'undefined') {
-        resultado = calcularOper(operacao, operando1, operando2);
-        operando = operacao;
+        resultado = calcular(operacao, valor1, valor2);
+        operador = operacao;
         document.getElementById("visor").value = resultado;
+
     } else {
-        operando2 = document.getElementById("visor").value;
+        valor2 = document.getElementById("visor").value;
         operador = operacao;
     }
 
 }
 
-function calcular(operador, operando1, operando2) {
+function calcular(operador, valor1, valor2) {
 
     switch (operador) {
         case "somar":
-            return operando1 + operando2;
+            resultado = valor1 + valor2;
+            alert("somar" + operador + valor1 + valor2);
+            return resultado;
         case "subtrair":
-            return operando1 - operando2;
+            return valor1 - valor2;
         case "multiplicar":
-            return operando1 * operando2;
+            return valor1 * valor2;
         case "dividir":
-            return operando1 / operando2;
+            return valor1 / valor2;
     }
 
 }
