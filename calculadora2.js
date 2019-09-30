@@ -1,110 +1,61 @@
-function tecla1() {
-    var valorVisor = document.getElementById("visor").value;
-    document.getElementById("visor").value = valorVisor.concat(1);
-}
+var operando1;
+var operando2;
+var operador;
+var resultado;
+var visor;
 
-function tecla2() {
-    var valorVisor = document.getElementById("visor").value;
-    document.getElementById("visor").value = valorVisor.concat(2);
-}
+function teclaNumerica(numero) {
 
-
-function tecla3() {
-    var valorVisor = document.getElementById("visor").value;
-    document.getElementById("visor").value = valorVisor.concat(3);
-}
-
-
-function tecla4() {
-    var valorVisor = document.getElementById("visor").value;
-    document.getElementById("visor").value = valorVisor.concat(4);
-}
-
-function tecla5() {
-    var valorVisor = document.getElementById("visor").value;
-    document.getElementById("visor").value = valorVisor.concat(5);
-}
-
-
-function tecla6() {
-    var valorVisor = document.getElementById("visor").value;
-    document.getElementById("visor").value = valorVisor.concat(6);
-}
-
-
-function tecla7() {
-    var valorVisor = document.getElementById("visor").value;
-    document.getElementById("visor").value = valorVisor.concat(7);
-}
-
-
-function tecla8() {
-    var valorVisor = document.getElementById("visor").value;
-    document.getElementById("visor").value = valorVisor.concat(8);
-}
-
-
-function tecla9() {
-    var valorVisor = document.getElementById("visor").value;
-    document.getElementById("visor").value = valorVisor.concat(9);
-}
-
-
-function tecla0() {
-    var valorVisor = document.getElementById("visor").value;
-    document.getElementById("visor").value = valorVisor.concat(0);
+        operando1 = operando1.concat(numero); 
+        document.getElementById("visor").value = numero;
+          
 
 }
 
-function teclaIgual() {
-    var valorVisor = document.getElementById("visor").value;
-    document.getElementById("visor").value = valorVisor.concat(0);
-
-}
-function teclaVirgula() {
-    var valorVisor = document.getElementById("visor").value;
-    document.getElementById("visor").value = valorVisor.concat();
-
-}
-
-function funcaoMultiplicacao() {
-    var valorVisor = document.getElementById("visor").value;
-    document.getElementById("visor").value = valorVisor.concat(0);
-
-}
-function funcaoSubtracao() {
-    var valorVisor = document.getElementById("visor").value;
-    document.getElementById("visor").value = valorVisor.concat(0);
-
-}
-function funcaoAdicao() {
-    var valorVisor = document.getElementById("visor").value;
-    document.getElementById("visor").value = valorVisor.concat(0);
-
-}
-function funcaoDivisao() {
-    var valorVisor = document.getElementById("visor").value;
-    document.getElementById("visor").value = valorVisor.concat(0);
-
-}
-
-
-
-function teclaNumerica(num){
-
-
-}
-
-function teclaFuncao()
-
-function apenasNumeros(evt) {
-    var theEvent = evt || window.event;
-    var key = theEvent.keyCode || theEvent.which;
-    key = String.fromCharCode(key);
-    //var regex = /^[0-9.,]+$/;
-    var regex = /^[0-9.]+$/;
-    if (!regex.test(key)) {
-        theEvent.returnValue = false;
-        if (theEvent.preventDefault) theEvent.preventDefault();
+function teclaFuncao(funcao) {
+    switch (funcao) {
+        case "somar":
+            operador = "somar";
+            simbolo = "+";
+            document.getElementById("visor").value = visor.concat(simbolo);
+            break;
+        case "subtrair":
+            operador = "subtrair";
+            break;
+        case "multiplicar":
+            operador = "multiplicar";
+            break;
+        case "dividir":
+            operador = "dividir";
+            break;
+        case "apagar":
+            document.getElementById("visor").value = '';
+            break;
+        case "=":
+            calcular(operador);
+            break;
     }
+}
+function calcular(operador) {
+
+    switch (operador) {
+        case "somar":
+            resultado = valor1 + valor2;
+            alert("Somar" + resultado);
+            break;
+
+        case "subtrair":
+            resultado = valor1 - valor2;
+            break;
+
+        case "multiplicar":
+            resultado = valor1 * valor2;
+            break;
+
+        case "dividir":
+            resultado = valor1 / valor2;
+            break;
+
+    }
+
 }

@@ -8,42 +8,40 @@ http://www.devin.com.br/calculadoras-javascript/
     <script type="text/javascript" src="calculadora2.js"></script>
     <link rel="stylesheet" type="text/css" href="calculadora2.css" />
 
-<body>
-    <fieldset>
-        <div>Calculadora 2.0</div>
-    </fieldset>
+    <body>
+        <fieldset>
+            <div>Calculadora 2.0</div>
+        </fieldset>
+
+        <div class="grid-item"><input class="text" id="visor" disabled="disabled" type="text" maxlength="10"></div>
+
+        <div class="grid-geral">
+            <div class="grid-numerico">
 
 
-
-    <div class="grid-geral">
-        <div class="grid-numerico">
-            
-            <div class="grid-item"><input class="text" onkeypress="return apenasNumeros();" id="visor" type="text"
-                    maxlength="17"></div>
-
-            <div class="grid-item">
-                <button class="numero" type="button" onclick="teclaNumerica(7)">7</button>
-            </div>
-            <div class="grid-item">
-                <button class="numero" type="button" onclick="teclaNumerica(8)">8</button>
-            </div>
-            <div class="grid-item">
-                <button class="numero" type="button" onclick="teclaNumerica(9)">9</button>
-            </div>
-            <div class="grid-item">
-                <button class="funcao" type="button" onclick="funcaoAdicao('somar')">+</button>
-            </div>
-            <div class="grid-item">
-                <button class="numero" type="button" onclick="teclaNumerica(4)">4</button>
-            </div>
-            <div class="grid-item">
+                <div class="grid-item">
+                    <button class="numero" type="button" onclick="teclaNumerica(7)">7</button>
+                </div>
+                <div class="grid-item">
+                    <button class="numero" type="button" onclick="teclaNumerica(8)">8</button>
+                </div>
+                <div class="grid-item">
+                    <button class="numero" type="button" onclick="teclaNumerica(9)">9</button>
+                </div>
+                <div class="grid-item">
+                    <button class="funcao" type="button" onclick="teclaFuncao('dividir')">/</button>
+                </div>
+                <div class="grid-item">
+                    <button class="numero" type="button" onclick="teclaNumerica(4)">4</button>
+                </div>
+                <div class="grid-item"></div>
                 <button class="numero" type="button" onclick="teclaNumerica(5)">5</button>
             </div>
             <div class="grid-item">
                 <button class="numero" type="button" onclick="teclaNumerica(6)">6</button>
             </div>
             <div class="grid-item">
-                <button class="funcao" type="button" onclick="funcaoSubtracao('subtrair')">-</button>
+                <button class="funcao" type="button" onclick="teclaFuncao('multiplicar')">x</button>
             </div>
             <div class="grid-item">
                 <button class="numero" type="button" onclick="teclaNumerica(1)">1</button>
@@ -55,23 +53,24 @@ http://www.devin.com.br/calculadoras-javascript/
                 <button class="numero" type="button" onclick="teclaNumerica(3)">3</button>
             </div>
             <div class="grid-item">
-                <button class="funcao" type="button" onclick="funcaoMultiplicacao()">x</button>
+                <button class="funcao" type="button" onclick="teclaFuncao('subtrair')">-</button>
             </div>
             <div class="grid-item">
                 <button class="numero" type="button" onclick="teclaNumerica(0)">0</button>
             </div>
             <div class="grid-item">
-                <button class="numero" type="button" onclick="teclaVirgula()">,</button>
+                <button class="numero" type="button" onclick="teclaFuncao('apagar')">CE</button>
             </div>
             <div class="grid-item">
-                <button class="funcao" type="button" onclick="resultadoIgual()">=</button>
+                <button class="funcao" type="button" onclick="teclaFuncao('somar')">+</button>
             </div>
             <div class="grid-item">
-                <button class="funcao" type="button" onclick="funcaoDivisao()">/</button>
+                <button class="funcao" type="button" onclick="resultadoIgual('=')">=</button>
             </div>
+
         </div>
-    </div>
-</body>
+        </div>
+    </body>
 </head>
 
 </html>
