@@ -48,7 +48,6 @@ function calcular(operador) {
         case "multiplicar":
             resultado = valor1 * valor2;
             break;
-
         case "dividir":
             resultado = valor1 / valor2;
             break;
