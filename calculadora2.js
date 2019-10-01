@@ -4,7 +4,6 @@ var operador;
 var visor;
 var resultado;
 
-
 function teclaNumerica(numero) {
 
     if (typeof visor == 'undefined') {
