@@ -51,7 +51,6 @@ function calcular(operador) {
         case "dividir":
             resultado = valor1 / valor2;
             break;
-
     }
 
 }
