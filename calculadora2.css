@@ -1,25 +1,28 @@
-
-.grid-numerico {
-    padding: 0.5em;
-    display: grid;
-    grid-gap: 0.9rem;
-    grid-template-columns: 0.9rem 0.9rem 0.9rem 0.9rem;
+.container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content:center;
+    flex-direction: column;
+    align-items: center;
     align-content: center;
+    width: 100vw;
 }
+.row-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+ .item{
+    width: 30%; 
 
-.grid-geral {
-    margin-left: 50%;
-    margin-right: 50%;
-    text-align: center;
-}
+ }
+ .numero:hover{
+    color: royalblue ;
+    background-color:crimson; 
+ }
 
-.input {
-    text-align: right;
-    align-content: center;
-    
-}
-
-.result {
-    text-align: right;
-    align-content: center;
-}
+ .funcao:hover{
+    color:green ;
+    background-color: blue; 
+ }
