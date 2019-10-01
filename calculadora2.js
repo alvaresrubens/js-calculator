@@ -5,7 +5,7 @@ var resultado;
 var visor;
 
 function teclaNumerica(numero) {
-        operando1 = operando1.concat(numero); 
+        
         document.getElementById("visor").value = numero;
 }
 
