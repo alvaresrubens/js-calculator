@@ -25,11 +25,9 @@ function teclaFuncao(operacao) {
         alert("Operador já definido " + operador);
     }
 
-
 }
 
 function limpar() {
-
 
     document.getElementById("visor").value = '';
     operador = null;
@@ -45,9 +43,6 @@ function resultado() {
     alert("Cálculo: " + valor1 + " " + operador + " " + valor2);
     resultado = calcular(operador, valor1, valor2);
     document.getElementById("visor").value = resultado;
-
-
-
 
 }
 
