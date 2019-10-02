@@ -17,7 +17,6 @@ function teclaNumerica(numero) {
 function teclaFuncao(operacao) {
 
     valor1 = document.getElementById("visor").value;
-    //alert(valor1);
     document.getElementById("visor").value = '';
     delete visor;
 
@@ -47,7 +46,6 @@ function teclaFuncao(operacao) {
         valor2 = document.getElementById("visor").value;
         operador = operacao;
     }
-
 }
 
 function calcular(operador, valor1, valor2) {
