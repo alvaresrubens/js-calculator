@@ -2,47 +2,53 @@ var valor1;
 var valor2;
 var operador;
 var visor;
-var resultado;
 
 function teclaNumerica(numero) {
     if (typeof visor == 'undefined') {
         document.getElementById("visor").value = '';
     }
-    visor = document.getElementById("visor").value = document.getElementById("visor").value + numero;
+    document.getElementById("visor").value = document.getElementById("visor").value + numero;
     visor = 1;
 }
 
 function teclaFuncao(operacao) {
     valor1 = document.getElementById("visor").value;
 
-    if (typeof operador != 'undefined') {
+    if (operador == null) {
 
         operador = operacao;
         document.getElementById("visor").value = '';
+        alert("Cálculo: " + valor1 + operador + valor2)
 
     } else {
-        operador = operacao;
-        document.getElementById("visor").value = '';
+        //document.getElementById("visor").value = '';
+        alert("Operador já definido " + operador);
     }
 
-    if (operacao == 'apagar') {
-        document.getElementById("visor").value = '';
-        delete visor;
-        delete operador;
-        delete valor1;
-        delete valor2;
-        delete resultado;
-    }
+
+}
+
+function limpar() {
+
+
+    document.getElementById("visor").value = '';
+    operador = null;
+    valor1 = null;
+    valor2 = null;
+    delete visor;
+    alert("Limpou");
 }
 
 function resultado() {
+    alert("Entrou em resultado");
     valor2 = document.getElementById("visor").value;
+    alert("Cálculo: " + valor1 + " " + operador + " " + valor2);
     resultado = calcular(operador, valor1, valor2);
     document.getElementById("visor").value = resultado;
-    delete operador;
-    delete valor1;
-    delete valor2;
-    delete visor;
+
+
+
+
 }
 
 function calcular(operador, valor1, valor2) {
@@ -61,4 +67,5 @@ function calcular(operador, valor1, valor2) {
             final = parseInt(valor1) / parseInt(valor2);
             return final;
     }
+
 }
