@@ -5,17 +5,13 @@ var resultado;
 
 function teclaNumerica(numero) {
 
-    /*
-        if (typeof visor == 'undefined') {
-            document.getElementById("visor").value = '';
-        }*/
+    if (resultado != null) {
+        limpar();
+        document.getElementById("visor").value = document.getElementById("visor").value + numero;
+    } else {
+        document.getElementById("visor").value = document.getElementById("visor").value + numero;
+    }
 
-    document.getElementById("visor").value = document.getElementById("visor").value + numero;
-
-    //alert(resultado);
-
-
-    //visor = 1;
 }
 
 function teclaFuncao(operacao) {
