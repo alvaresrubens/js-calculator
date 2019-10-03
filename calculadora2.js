@@ -5,10 +5,10 @@ var resultado;
 
 function teclaNumerica(numero) {
 
-    if (resultado != null) {
-        limpar();
+    if (resultado == null) {
         document.getElementById("visor").value = document.getElementById("visor").value + numero;
     } else {
+
         document.getElementById("visor").value = document.getElementById("visor").value + numero;
     }
 
@@ -19,7 +19,12 @@ function teclaFuncao(operacao) {
     if (operador == null) {
         valor1 = document.getElementById("visor").value;
         operador = operacao;
-        document.getElementById("visorOperacao").value = valor1 + operacao;
+        document.getElementById("visorOperacao").value = valor1 + operador;
+        document.getElementById("visor").value = '';
+    } else {
+        valor1 = resultado;
+        operador = operacao;
+        document.getElementById("visorOperacao").value = valor1 + operador;
         document.getElementById("visor").value = '';
     }
 }
@@ -39,7 +44,6 @@ function igual() {
         document.getElementById("visor").value = document.getElementById("visor").value;
     } else {
         if (resultado != null) {
-
             valor1 = resultado;
             document.getElementById("visorOperacao").value = valor1 + operador + valor2;
             resultado = calcular(operador, valor1, valor2);
